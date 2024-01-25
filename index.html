@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Online Shopping</title>
+<style>
+  * {box-sizing: border-box;}
+
+body { 
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #b700ff;
+  padding: 20px 10px;
+  max-height: 100px;
+}
+
+.header a {
+  float: left;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.header a:hover {
+  background-color: #b700ff;
+  color: black;
+}
+
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.header-right {
+  float: right;
+}
+
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .header-right {
+    float: none;
+  }
+}
+</style>
+
+<body>
+
+  <div class="header">
+    <a href="#default" class="logo">Blue Berries</a>
+    <div class="header-right">
+      <a class="active" href="#home">Home</a>
+      <a href="#contact">Contact</a>
+      <a href="#about">About</a>
+    </div>
+  </div>
+  
+
+</style>
+<style>
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 800px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 25px 25px 25px 25px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(236, 230, 230, 0.8);
+}
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 5px;
+  width: 5px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+</style>
+</head>
+<body>
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 5</div>
+  <img src="res\samantha myntra.jpg" style="width:100%">
+  <div class="text">Caption Text</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 5</div>
+  <img src="res\soch-featured-1024x501.jpg" style="width:100%">
+  <div class="text">Caption Two</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 5</div>
+  <img src="res\new season.jpg" style="width:100%">
+  <div class="text">Caption Three</div>
+</div>
+
+<div class="mySlides fade">
+    <div class="numbertext">4 / 5</div>
+    <img src="res\mid season.jpg" style="width:100%">
+    <div class="text">Caption Three</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">5 / 5</div>
+    <img src="res\red dress.jpg" style="width:100%">
+    <div class="text">Caption Three</div>
+  </div>
+
+<a class="prev" onclick="plusSlides(-1)">❮</a>
+<a class="next" onclick="plusSlides(1)">❯</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+  <span class="dot" onclick="currentSlide(4)"></span> 
+  <span class="dot" onclick="currentSlide(5)"></span> 
+</div>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+</body>
+</html> 
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div.gallery {
+  border: 1px solid #ccc;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+* {box-sizing: border-box;
+}
+
+.responsive {
+  padding: 10px;
+  float:left;
+  width: 24.9999999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/**********  Footer-Section CSS Code Starts  **********/
+.footer {
+  background: #232f3e;
+  padding: 50px 0px;
+}
+.quicklink-menu {
+  list-style: none;
+  padding-left: 10px;
+}
+.quicklink-menu li a {
+  color: #fff;
+  line-height: 2.5px;
+  font-size: 15px;
+  text-decoration:none;
+  font-family "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.social-media {
+  list-style: none;
+  margin-top: 10px;
+}
+.social-media li a img {
+  width: 30px;
+}
+.social-media li {
+  float: left;
+  padding: 0px 8px;
+}
+.quicklink-heading {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  font-family "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-bottom: 10px;
+}
+.get-in-touch {
+  list-style: none;
+  padding-left: 10px;
+}
+.get-in-touch li i {
+  color: #ed372c;
+  font-size: 20px;
+}
+.get-in-touch li {
+  color: #fff;
+  line-height: 2.5;
+  font-size: 15px;
+  text-decoration: none;
+  font-family "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.footer-e-mail {
+  font-size: 15Spx;
+  font-weight: bold;
+  color: #fff;
+  font-family "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-decoration: none;
+}
+.footer-website {
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  font-family "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-decoration: none;
+}
+.footer2-bacbor {
+  background: #232f3e;
+  padding: 10px 0px;
+  border-top: 1px solid #898989;
+}
+.footer2-content {
+  font-size: 14px;
+  color: #fff;
+  font-family "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: center;
+}
+/**********   Footer-Section CSS Code Ends  **********/
+
+
+
+</style>
+</head>
+<body>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="res\watch.jpg">
+      <img src="res\watch.jpg" alt="res\watch" width="600" height="400">
+    </a>
+  </div>
+</div>
+
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="res\download.jpg">
+      <img src="res\download.jpg" alt="res\download" width="600" height="400">
+    </a>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="res\iPhone-15.jpg">
+      <img src="res\iPhone-15.jpg" alt="res\iPhone-15" width="600" height="400">
+    </a>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="res/y73.jpg">
+      <img src="res/y73.jpg" alt="res/y73" width="600" height="400">
+    </a>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="res\black-friday-sale-social-media-post-design-template_47987-17267.avif">
+      <img src="res\black-friday-sale-social-media-post-design-template_47987-17267.avif" alt="res\black-friday-sale-social-media-post-design-template_47987-17267" width="600" height="400">
+    </a>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="res\chocolate-color-classical-watch-brand-product-social-media-post-banner_154386-108.avif">
+      <img src="res\chocolate-color-classical-watch-brand-product-social-media-post-banner_154386-108.avif" alt="res\chocolate-color-classical-watch-brand-product-social-media-post-banner_154386-108" width="600" height="400">
+    </a>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="res\electronic-device-balancing-concept_23-2150422318.avif">
+      <img src="res\electronic-device-balancing-concept_23-2150422318.avif" alt="res\electronic-device-balancing-concept_23-2150422318" width="600" height="400">
+    </a>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="res\laptop-product-sale-advertising-social-media-post_252779-860.avif">
+      <img src="res\laptop-product-sale-advertising-social-media-post_252779-860.avif" alt="res\laptop-product-sale-advertising-social-media-post_252779-860" width="600" height="400">
+    </a>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="res\headphone-brand-product-social-media-instagram-banner_505751-2757.avif">
+      <img src="res\headphone-brand-product-social-media-instagram-banner_505751-2757.avif" alt="res\headphone-brand-product-social-media-instagram-banner_505751-2757" width="600" height="400">
+    </a>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="res\headphone-brand-product-social-media-instagram-banner_505751-2759.avif">
+      <img src="res\headphone-brand-product-social-media-instagram-banner_505751-2759.avif" alt="res\headphone-brand-product-social-media-instagram-banner_505751-2759" width="600" height="400">
+    </a>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="res\headphone-brand-product-social-media-instagram-banner_505751-2761.avif">
+      <img src="res\headphone-brand-product-social-media-instagram-banner_505751-2761.avif" alt="res\\headphone-brand-product-social-media-instagram-banner_505751-2761" width="600" height="400">
+    </a>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="res\headphone-brand-product-social-media-instagram-banner_505751-2770.avif">
+      <img src="res\headphone-brand-product-social-media-instagram-banner_505751-2770.avif" alt="res\headphone-brand-product-social-media-instagram-banner_505751-2770" width="600" height="400">
+    </a>
+  </div>
+</div>
+
+<div class="clearfix"></div>
+<!-- Footer-Section HTML Code STARTS -->
+<div class="width-100 margin-top-50 footer">
+  <div class="container">
+    <div class="width-25">
+      <h2 class="quicklink-heading">Account Detail</h2>
+      <ul class="quicklink-menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Search</a></li>
+        <li><a href="#">Cart</a></li>
+        <li><a href="#">Checkout</a></li>
+      </ul>
+    </div>
+    <div class="width-25">
+      <h2 class="quicklink-heading">Quick Link</h2>
+      <ul class="quicklink-menu">
+        <li><a href="#">My Profile</a></li>
+        <li><a href="#">Change Password</a></li>
+        <li><a href="#">Order History</a></li>
+        <li><a href="#">My Whislist</a></li>
+        <li><a href="#">My Cashback</a></li>
+      </ul>
+    </div>
+    <div class="width-25">
+      <h2 class="quicklink-heading">Quick Link</h2>
+      <ul class="quicklink-menu">
+        <li><a href="#">Login</a></li>
+        <li><a href="#">Faq</a></li>
+        <li><a href="#">Contact us</a></li>
+        <li><a href="#">Download App</a></li>
+        <li><a href="#">Refer & Earn Cashback</a></li>
+      </ul>
+    </div>
+    <div class="width-25">
+      <h2 class="quicklink-heading">GET IN TOUCH</h2>
+      <ul class="get-in-touch">
+        <li><i class="fa fa-envelope-o" aria-hidden="true"></i> E-MAIL:<a href="#" class="footer-e-mail"> info@blueberries.com</a></li>
+        <li><i class="fa fa-headphones" aria-hidden="true"></i> WHATS-APP: +91 -123 456 789</li>
+        <li><i class="fa fa-fax" aria-hidden="true"></i> CONTACT NO.: +91 -(123)-4567890</li>
+        <li><i class="fa fa-globe" aria-hidden="true"></i> WEBSITE:<a href="#" class="footer-website"> https://www.blueberries.com</a></li>
+      </ul>
+      <ul class="social-media">
+        <li><a href="#"><img src="res\facebook.png"></a></li>
+        <li><a href="#"><img src="res\twitter.png"></a></li>
+        <li><a href="#"><img src="res\linkedin.png"></a></li>
+        <li><a href="#"><img src="res\instagram best.png"></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!---------- Footer-Section HTML Code Ends --------->
+
+
+</body>
+</html>
+
